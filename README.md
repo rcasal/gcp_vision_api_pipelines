@@ -36,7 +36,7 @@ To perform batch processing on all the images in a GCS bucket and store the anal
 2. Run the following command, replacing the fields with the appropriate values:
 
     ```shell
-    python gcp_vision_api_analysis_pipelines/gcs_to_bq_processing.py \
+    python gcp_vision_api_pipelines/gcs_to_bq_processing.py \
         --project_id "PROJECT_ID" \
         --input_bucket_name "BUCKET_NAME" \
         --output_dataset_name "DATASET_NAME" \
@@ -104,6 +104,4 @@ Please refer to the documentation or code samples provided in the repository for
 
 ## Contributing
 
-Contributions to the `gcp-vision-api-analysis-pipelines` repository are welcome! If you find any issues, have suggestions, or would like to contribute enhancements, please feel free to open issues and pull requests in this repository. Make sure to follow the existing code style and conventions when contributing.
-
-
+Contributions to the `gcp-vision-api-pipelines` repository are welcome! If you have any questions or need support with using this repository, please feel free to open an issue in this repository or contact the Buenos Aires Data Science Team. We are here to help and provide assistance with any inquiries you may have.

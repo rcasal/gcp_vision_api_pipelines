@@ -4,7 +4,7 @@ from typing import List
 import io
 from utils.format_utils import format_json
 from utils.gcp_utils import write_to_bq
-
+import json
 
 def analyze_image_from_uri(image_uri: str, feature_types: List[str]) -> vision.AnnotateImageResponse:
     """
@@ -106,5 +106,9 @@ def process_images(input_bucket_name, output_dataset_name, project_id, auth_path
 
     # Write the creative data to BigQuery
     write_to_bq(bq_client, config['output_dataset_name'], table_name, response_list, write_disposition)
+    # Save all JSON objects to a single file
+    file_path = config['output_dataset_name'] + ".json"
+    with open(file_path, "w") as file:
+        json.dump(response_list, file)
 
     return 'OK'

@@ -105,7 +105,7 @@ def process_images(input_bucket_name, output_dataset_name, project_id, auth_path
         response_list.append(creative_data)
 
     # Write the creative data to BigQuery
-    write_to_bq(bq_client, config['output_dataset_name'], table_name, response_list, write_disposition)
+    #write_to_bq(bq_client, config['output_dataset_name'], table_name, response_list, write_disposition)
     # Save all JSON objects to a single file
     file_path = config['output_dataset_name'] + ".json"
     with open(file_path, "w") as file:
